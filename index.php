@@ -8,7 +8,9 @@
 		<h1>Test !</h1>
 
 		<?php
-			echo file_get_contents("soapclient/partner.wsdl.xml");
+			//echo file_get_contents("soapclient/partner.wsdl.xml");
+
+			echo phpinfo();
 
 			error_reporting(E_ALL);
 
