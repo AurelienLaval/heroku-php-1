@@ -8,6 +8,8 @@
 		<h1>Test !</h1>
 
 		<?php
+			error_reporting(E_ALL);
+
 			define("USERNAME", $_GET['username']);
 
 			define("PASSWORD", $_GET['password']);
