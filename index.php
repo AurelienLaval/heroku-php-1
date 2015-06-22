@@ -21,6 +21,15 @@
 			$mySforceConnection->createConnection("partner.wsdl.xml");
 
 			$mySforceConnection->login(USERNAME, PASSWORD.SECURITY_TOKEN);
+
+			$query = "SELECT Id, FirstName, LastName, Phone from Contact";
+			$response = $mySforceConnection->query($query);
+
+			echo "Results of query '$query'<br/><br/>\n";
+			foreach ($response->records as $record) {
+			    echo $record->Id . ": " . $record->FirstName . " "
+			        . $record->LastName . " " . $record->Phone . "<br/>\n";
+			}
 		?>
 
 	</body>
