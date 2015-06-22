@@ -13,6 +13,7 @@
         }
     },
     "require": {
-        "ext-soap": "*"
+        "ext-soap": "*",
+        "php": ">=5.4.0"
     }
 }
