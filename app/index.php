@@ -10,7 +10,7 @@
 		<?php
 			//echo file_get_contents("soapclient/partner.wsdl.xml");
 
-			echo phpinfo();
+			//echo phpinfo();
 
 			error_reporting(E_ALL);
 
