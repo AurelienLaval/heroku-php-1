@@ -8,11 +8,11 @@
 		<h1>Test !</h1>
 
 		<?php
-			define("USERNAME", "aurelien.laval@gmail.dev");
+			define("USERNAME", $_GET['username']);
 
-			define("PASSWORD", "a@!29011990");
+			define("PASSWORD", $_GET['password']);
 
-			define("SECURITY_TOKEN", "QI5xcOaJAvmtfN92QqnUHwVvr"); 
+			define("SECURITY_TOKEN", $_GET['token']); 
 
 			require_once ('soapclient/SforcePartnerClient.php'); 
 
