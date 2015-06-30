@@ -9,6 +9,15 @@
 	</head>
 
 	<body>
+		<div>
+			Ceci une page de test pour interfacer Heroku avec Salesforce !<br/>
+			Comment essayer ?<br/>
+			Rien de plus simple !<br/>
+			Il suffit d'ajouter votre nom d'utilisateur (paramètre 'username') ainsi que votre mot de passe et votre jeton de sécurité (paramètre 'token')<br/>
+			à l'URL au dessus sous la forme de : ?username=myUsername&token=myPasswordMyToken<br/><br/>
+			Enjoy !
+		</div>
+		
 		<?php
 			require_once 'createConnexion.php';
 			
@@ -20,14 +29,6 @@
 				echo "Results of query '$query'<br/><br/>\n";
 				
 				?>
-				<div>
-					Ceci une page de test pour interfacer Heroku avec Salesforce !<br/>
-					Comment essayer ?<br/>
-					Rien de plus simple !<br/>
-					Il suffit d'ajouter votre nom d'utilisateur (paramètre 'username') ainsi que votre mot de passe et votre jeton de sécurité (paramètre 'token')<br/>
-					à l'URL au dessus sous la forme de : ?username=myUsername&token=myPasswordMyToken<br/><br/>
-					Enjoy !
-				</div>
 				
 				<fieldset>
 					<legend>Récupération de résultats dans Salesforce</legend>
