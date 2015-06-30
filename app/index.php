@@ -55,7 +55,7 @@
 		<fieldset>
 			<legend>Formulaire pour créer un enregistrement dans Salesforce</legend>
 			
-			<form action="createContact.php?username<?php echo USERNAME; ?>&token=<?php echo SECURITY_TOKEN; ?>" method="post">
+			<form action="createContact.php?username=<?php echo USERNAME; ?>&token=<?php echo SECURITY_TOKEN; ?>" method="post">
 				<table>
 					<tr>
 						<th>Nom : </th>
