@@ -12,9 +12,9 @@
 
 				$records[0] = new SObject();
 				$records[0]->fields = array(
-				    'FirstName' => $_POST[''],
-				    'LastName' => $_POST[''],
-				    'Phone' => $_POST[''],
+				    'FirstName' => $_POST['firstname'],
+				    'LastName' => $_POST['lastname'],
+				    'Phone' => $_POST['phone'],
 				);
 				$records[0]->type = 'Contact';
 				
