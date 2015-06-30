@@ -10,12 +10,12 @@
 
 	<body>
 		<div>
-			Ceci une page de test pour interfacer Heroku avec Salesforce !<br/>
-			Comment essayer ?<br/>
-			Rien de plus simple !<br/>
+			Ceci une page de test pour interfacer Heroku avec Salesforce !<br/><br/>
+			Comment essayer ?<br/><br/>
+			Rien de plus simple !<br/><br/>
 			Il suffit d'ajouter votre nom d'utilisateur (paramètre 'username') ainsi que votre mot de passe et votre jeton de sécurité (paramètre 'token')<br/>
 			à l'URL au dessus sous la forme de : ?username=myUsername&token=myPasswordMyToken<br/><br/>
-			Enjoy !
+			Enjoy !<br/><br/><br/>
 		</div>
 		
 		<?php
@@ -25,9 +25,6 @@
 				$query = "SELECT Id, FirstName, LastName, Phone from Contact ORDER BY CreatedDate DESC LIMIT 5";
 				$response = $mySforceConnection->query($query);
 				$queryResult = new QueryResult($response);
-	
-				echo "Results of query '$query'<br/><br/>\n";
-				
 				?>
 				
 				<fieldset>
@@ -61,6 +58,8 @@
 			}
 		?>
 		</fieldset>
+		
+		<br/><br/>
 		
 		<fieldset>
 			<legend>Formulaire pour créer un enregistrement dans Salesforce</legend>
