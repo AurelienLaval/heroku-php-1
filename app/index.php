@@ -29,7 +29,7 @@
 			}
 			
 			try{
-				$query = "SELECT Id, FirstName, LastName, Phone from Contact LIMIT 5";
+				$query = "SELECT Id, FirstName, LastName, Phone from Contact ORDER BY CreatedDate DESC LIMIT 5";
 				$response = $mySforceConnection->query($query);
 				$queryResult = new QueryResult($response);
 	
@@ -71,6 +71,25 @@
 		<fieldset>
 			<legend>Formulaire pour créer un enregistrement dans Salesforce</legend>
 			
+			<form action="createContact.php" method="post">
+				<table>
+					<tr>
+						<th>Nom : </th>
+						<td><input type="text" name="lastname" /></td>
+					</tr>
+					<tr>
+						<th>Prénom : </th>
+						<td><input type="text" name="firstname" /></td>
+					</tr>
+					<tr>
+						<th>Téléphone : </th>
+						<td><input type="text" name="phone" /></td>
+					</tr>
+					<tr>
+						<td><input type="submit" value="Valider" /></td>
+					</tr>
+				</table>
+			</form>
 		</fieldset>
 	</body>
 
