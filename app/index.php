@@ -10,23 +10,7 @@
 
 	<body>
 		<?php
-			try{
-				error_reporting(E_ALL);
-	
-				define("USERNAME", $_GET['username']);
-	
-				define("SECURITY_TOKEN", $_GET['token']); 
-	
-				require_once ('soapclient/SforcePartnerClient.php'); 
-	
-				$mySforceConnection = new SforcePartnerClient();
-	
-				$mySforceConnection->createConnection("soapclient/partner.wsdl.xml");
-	
-				$mySforceConnection->login(USERNAME, SECURITY_TOKEN);
-			}catch(Exception $e){
-				echo "Erreur à la connexion : " . $e.getMessage();
-			}
+			require_once 'createConnexion.php';
 			
 			try{
 				$query = "SELECT Id, FirstName, LastName, Phone from Contact ORDER BY CreatedDate DESC LIMIT 5";
@@ -92,5 +76,4 @@
 			</form>
 		</fieldset>
 	</body>
-
 </html>
