@@ -9,15 +9,9 @@
 
 		<?php
 			try{
-				//echo file_get_contents("soapclient/partner.wsdl.xml");
-	
-				//echo phpinfo();
-	
 				error_reporting(E_ALL);
 	
 				define("USERNAME", $_GET['username']);
-	
-				define("PASSWORD", $_GET['password']);
 	
 				define("SECURITY_TOKEN", $_GET['token']); 
 	
@@ -27,7 +21,7 @@
 	
 				$mySforceConnection->createConnection("soapclient/partner.wsdl.xml");
 	
-				$mySforceConnection->login(USERNAME, PASSWORD.SECURITY_TOKEN);
+				$mySforceConnection->login(USERNAME, SECURITY_TOKEN);
 	
 				$query = "SELECT Id, FirstName, LastName, Phone from Contact";
 				$response = $mySforceConnection->query($query);
