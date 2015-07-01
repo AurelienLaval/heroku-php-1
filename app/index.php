@@ -56,28 +56,7 @@
 					<?php
 				}catch(Exception $e){
 					echo 'Exception reçue : ',  $e->getMessage(), "\n";
-				}
-			}else{
-				?>
-
-				<form action="index.php" method="GET">
-					<table>
-						<tr>
-							<th>Nom d'utilisateur : </th>
-							<td><input type="text" name="username" /></td>
-						</tr>
-						<tr>
-							<th>Mot de passe et jeton de sécurité :</th>
-							<td><input type="text" name="token" /></td>
-						</tr>
-						<tr>
-							<td colspan="2"><input type="submit" value="Valider" /></td>
-						</tr>
-					</table>
-				</form>
-
-				<?php
-			}			
+				}			
 		?>
 		</fieldset>
 		
@@ -106,5 +85,29 @@
 				</table>
 			</form>
 		</fieldset>
+
+		<?php
+		}else{
+				?>
+
+				<form action="index.php" method="GET">
+					<table>
+						<tr>
+							<th>Nom d'utilisateur : </th>
+							<td><input type="text" name="username" /></td>
+						</tr>
+						<tr>
+							<th>Mot de passe et jeton de sécurité :</th>
+							<td><input type="text" name="token" /></td>
+						</tr>
+						<tr>
+							<td colspan="2"><input type="submit" value="Valider" /></td>
+						</tr>
+					</table>
+				</form>
+
+				<?php
+			}
+		?>
 	</body>
 </html>
