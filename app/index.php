@@ -1,6 +1,7 @@
 <html>
 
 	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<style type="text/css">
 			table{
 				border-collapse:collapse;
@@ -19,7 +20,7 @@
 		</div>
 		
 		<?php
-			if(!empty($_GET['username']) && !empty($_GET['token']){
+			if(!empty($_GET['username']) && !empty($_GET['token'])){
 				require_once 'createConnexion.php';
 			
 				try{
@@ -89,23 +90,23 @@
 		<?php
 		}else{
 				?>
-
-				<form action="index.php" method="GET">
-					<table>
-						<tr>
-							<th>Nom d'utilisateur : </th>
-							<td><input type="text" name="username" /></td>
-						</tr>
-						<tr>
-							<th>Mot de passe et jeton de sécurité :</th>
-							<td><input type="text" name="token" /></td>
-						</tr>
-						<tr>
-							<td colspan="2"><input type="submit" value="Valider" /></td>
-						</tr>
-					</table>
-				</form>
-
+				<fieldset>
+					<form action="index.php" method="GET">
+						<table>
+							<tr>
+								<th>Nom d'utilisateur : </th>
+								<td><input type="text" name="username" /></td>
+							</tr>
+							<tr>
+								<th>Mot de passe et jeton de sécurité :</th>
+								<td><input type="text" name="token" /></td>
+							</tr>
+							<tr>
+								<td colspan="2"><input type="submit" value="Valider" /></td>
+							</tr>
+						</table>
+					</form>
+				</fieldset>
 				<?php
 			}
 		?>
