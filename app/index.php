@@ -19,7 +19,7 @@
 		</div>
 		
 		<?php
-			if(!empty($_GET['username'] && !empty($_GET['token']){
+			if(!empty($_GET['username']) && !empty($_GET['token']){
 				require_once 'createConnexion.php';
 			
 				try{
