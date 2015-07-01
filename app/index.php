@@ -21,6 +21,8 @@
 		
 		<?php
 			if(!empty($_GET['username']) && !empty($_GET['token'])){
+				echo urldecode('a%40%2129011990QI5xcOaJAvmtfN92QqnUHwVvr');
+				
 				require_once 'createConnexion.php';
 			
 				try{
