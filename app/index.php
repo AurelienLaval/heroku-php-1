@@ -19,43 +19,65 @@
 		</div>
 		
 		<?php
-			require_once 'createConnexion.php';
+			if(!empty($_GET['username'] && !empty($_GET['token']){
+				require_once 'createConnexion.php';
 			
-			try{
-				$query = "SELECT Id, FirstName, LastName, Phone from Contact ORDER BY CreatedDate DESC LIMIT 5";
-				$response = $mySforceConnection->query($query);
-				$queryResult = new QueryResult($response);
+				try{
+					$query = "SELECT Id, FirstName, LastName, Phone from Contact ORDER BY CreatedDate DESC LIMIT 5";
+					$response = $mySforceConnection->query($query);
+					$queryResult = new QueryResult($response);
+					?>
+					
+					<fieldset>
+						<legend>Récupération de résultats dans Salesforce</legend>
+					
+						<table border="1">
+							<tr>
+								<th>Id</th>
+								<th>Firstname</th>
+								<th>Lastname</th>
+								<th>Phone</th>
+							</tr>
+							<?php
+							
+							for ($queryResult->rewind(); $queryResult->pointer < $queryResult->size; $queryResult->next()) {
+							    $record = $queryResult->current();
+							    
+							    echo "<tr>";
+							    	echo "<td>" . $record->Id . "</td>";
+							    	echo "<td>" . $record->fields->FirstName . "</td>";
+							    	echo "<td>" . $record->fields->LastName . "</td>";
+							    	echo "<td>" . $record->fields->Phone . "</td>";
+							    echo "</tr>";
+							}
+							?>
+						</table>
+					
+					<?php
+				}catch(Exception $e){
+					echo 'Exception reçue : ',  $e->getMessage(), "\n";
+				}
+			}else{
 				?>
-				
-				<fieldset>
-					<legend>Récupération de résultats dans Salesforce</legend>
-				
-					<table border="1">
+
+				<form action="index.php" method="GET">
+					<table>
 						<tr>
-							<th>Id</th>
-							<th>Firstname</th>
-							<th>Lastname</th>
-							<th>Phone</th>
+							<th>Nom d'utilisateur : </th>
+							<td><input type="text" name="username" /></td>
 						</tr>
-						<?php
-						
-						for ($queryResult->rewind(); $queryResult->pointer < $queryResult->size; $queryResult->next()) {
-						    $record = $queryResult->current();
-						    
-						    echo "<tr>";
-						    	echo "<td>" . $record->Id . "</td>";
-						    	echo "<td>" . $record->fields->FirstName . "</td>";
-						    	echo "<td>" . $record->fields->LastName . "</td>";
-						    	echo "<td>" . $record->fields->Phone . "</td>";
-						    echo "</tr>";
-						}
-						?>
+						<tr>
+							<th>Mot de passe et jeton de sécurité :</th>
+							<td><input type="text" name="token" /></td>
+						</tr>
+						<tr>
+							<td colspan="2"><input type="submit" value="Valider" /></td>
+						</tr>
 					</table>
-				
+				</form>
+
 				<?php
-			}catch(Exception $e){
-				echo 'Exception reçue : ',  $e->getMessage(), "\n";
-			}
+			}			
 		?>
 		</fieldset>
 		
