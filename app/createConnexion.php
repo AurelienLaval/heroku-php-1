@@ -2,7 +2,7 @@
 	try{
 		error_reporting(E_ALL);
 
-		define("USERNAME", $_GET['username']);
+		define("USERNAME", urldecode($_GET['username']));
 
 		define("SECURITY_TOKEN", urldecode($_GET['token'])); 
 
