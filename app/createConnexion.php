@@ -4,7 +4,7 @@
 
 		define("USERNAME", $_GET['username']);
 
-		define("SECURITY_TOKEN", $_GET['token']); 
+		define("SECURITY_TOKEN", urldecode($_GET['token'])); 
 
 		require_once ('soapclient/SforcePartnerClient.php'); 
 
